@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Lista Finalizada</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <button ion-item 
+                *ngFor="let list of purchasesService.list" 
+               (click)="listSelected(list)">
+          {{ list.title }}
+        </button>  
+      </ion-list>
+</ion-content>

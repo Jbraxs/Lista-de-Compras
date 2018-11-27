@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> {{ list.title }} </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-list-header> Articulos para comprar </ion-list-header>
+
+    <ion-item>
+      <ion-label floating>Articulo</ion-label>
+      <ion-input
+        [(ngModel)]="nameItem"
+        type="text"
+        (keyup.enter)="addItems()"
+      ></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <ion-list *ngIf="list.items.length > 0">
+
+    <ion-list-header>
+      Articulos que comprar
+    </ion-list-header>
+
+    <button ion-item detail-none
+    (click)="checkbox(item)"
+    class="animated fadeInDown"
+    *ngFor="let item of list.items">
+    <ion-icon *ngIf="item.finished" name="checkbox-outline" item-start></ion-icon>
+    <ion-icon *ngIf="!item.finished" name="square-outline" item-start></ion-icon>
+      {{ item.desc }}
+    </button>
+
+  </ion-list>
+</ion-content>

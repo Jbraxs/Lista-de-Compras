@@ -1,23 +1,19 @@
 <ion-header>
-    <ion-navbar color="dark">
-      <ion-title>Lista de Compras</ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content>
-      <ion-list>
-          <button ion-item 
-                  *ngFor="let list of purchasesService.list" 
-                 (click)="listSelected(list)">
-            {{ list.title }}
-          </button>  
-        </ion-list>
-        
-        <ion-fab bottom right>
-          <button (click)="addList()" ion-fab>
-            <ion-icon name="add"></ion-icon>
-          </button>
-        </ion-fab>
+  <ion-navbar color="dark">
+    <ion-title>Lista de Compras</ion-title>
+  </ion-navbar>
+</ion-header>
 
-  </ion-content>
-  
+<ion-content>
+
+  <img src="../../assets/imgs/compras.jpg">
+
+  <app-lists></app-lists>
+
+  <ion-fab bottom right>
+    <button (click)="addList()" ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

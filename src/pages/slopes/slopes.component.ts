@@ -1,10 +1,7 @@
 import { Component } from "@angular/core";
 import { PurchasesService } from "../../services/purchases.service";
-import { List } from "../../models";
 import { NavController, AlertController } from "ionic-angular";
 import { addItemsPage } from "../addItems/addItems.component";
-import { ListItem } from '../../models/list-item.model';
-
 
 
 
@@ -17,10 +14,6 @@ export class SlopesPage {
     constructor ( public purchasesService: PurchasesService,
                   private navCtrl: NavController,
                   private alertCtrl: AlertController){
-    }
-
-    listSelected(list: List){
-        console.log(list);
     }
 
     addList(){
@@ -47,5 +40,4 @@ export class SlopesPage {
         });
         alert.present();
     }
-
 }

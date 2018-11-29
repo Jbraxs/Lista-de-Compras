@@ -24,15 +24,24 @@
     <ion-list-header>
       Articulos que comprar
     </ion-list-header>
+    
+    <ion-item-sliding  *ngFor="let item of list.items; let i = index" class="animated fadeInDown">
+      
+      <button ion-item detail-none
+      (click)="checkbox(item)">
+      <ion-icon *ngIf="item.finished" name="checkbox-outline" item-start></ion-icon>
+      <ion-icon *ngIf="!item.finished" name="square-outline" item-start></ion-icon>
+        {{ item.desc }}
+      </button>
 
-    <button ion-item detail-none
-    (click)="checkbox(item)"
-    class="animated fadeInDown"
-    *ngFor="let item of list.items">
-    <ion-icon *ngIf="item.finished" name="checkbox-outline" item-start></ion-icon>
-    <ion-icon *ngIf="!item.finished" name="square-outline" item-start></ion-icon>
-      {{ item.desc }}
-    </button>
+      <ion-item-options side="right">
+          <button (click)="delitem(i)" ion-button icon-only color="danger">
+            <ion-icon name="close"></ion-icon>
+          </button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
 
   </ion-list>
 </ion-content>

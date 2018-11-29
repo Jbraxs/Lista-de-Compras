@@ -13,11 +13,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SlopesPage } from '../pages/slopes/slopes.component';
 import { FinishedPage } from '../pages/finished/finished.component';
 import { addItemsPage } from '../pages/addItems/addItems.component';
+import { ListsComponent } from '../component/lists.component';
 
 //Servicios
 import { PurchasesService } from '../services/purchases.service';
 
-
+//Pipes
+import { FilterCompltPipe } from '../pipes/filter-complt/filter-complt';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { PurchasesService } from '../services/purchases.service';
     TabsPage, 
     SlopesPage,
     FinishedPage,
-    addItemsPage
+    addItemsPage,
+    FilterCompltPipe,
+    ListsComponent
   ],
   imports: [
     BrowserModule,
